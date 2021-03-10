@@ -141,6 +141,7 @@ workflows:
       - test_classification_model
       - test_ml_api
       - differential_tests
+      - train_and_upload_classification_model
       - train_and_upload_classification_model:
           requires:
             - test_classification_model

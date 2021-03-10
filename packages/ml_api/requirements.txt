@@ -12,4 +12,3 @@ classification-model==1.0.0
 # Deployment
 gunicorn==19.9.0
 
-# -e "C:\Users\jaya.rachabathuni\Desktop\Titanic_ML_Model\packages\classification_model"

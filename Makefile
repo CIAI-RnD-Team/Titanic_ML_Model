@@ -1,4 +1,4 @@
-NAME=ml-api-deploy-1
+NAME=titanic-classification
 COMMIT_ID=$(shell git rev-parse HEAD)
 
 

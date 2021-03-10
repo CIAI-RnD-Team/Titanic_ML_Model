@@ -133,10 +133,7 @@ jobs:
           name: Release to Heroku
           command: |
             heroku container:release web --app $HEROKU_APP_NAME
-#  Predictions:
-#    <<: *defaults
-#    steps:
-#    - curl --header 'Content-Type: application/json' --request POST --data @scripts/input_test.json https://ml-api-deploy-1.herokuapp.com/v1/predict/regression
+
 workflows:
   version: 2
   test-all:

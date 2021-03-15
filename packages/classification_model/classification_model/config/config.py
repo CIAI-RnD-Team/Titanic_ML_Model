@@ -19,7 +19,6 @@ TRAINING_DATA_FILE = "train.csv"
 TARGET = "Survived"
 
 #variables
-
 FEATURES=[
     "Sex",
     "Age",

@@ -32,8 +32,6 @@ def make_prediction(*, input_data: t.Union[pd.DataFrame, dict],
     
     prediction = _price_pipe.predict(validated_data)
 
-    #output = np.exp(prediction)
-
     results = {"predictions": prediction, "version": _version}
 
     _logger.info(

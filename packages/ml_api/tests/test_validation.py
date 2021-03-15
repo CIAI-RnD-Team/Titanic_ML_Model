@@ -7,9 +7,6 @@ from classification_model.processing.data_management import load_dataset
 def test_prediction_endpoint_validation_200(flask_test_client):
     # Given
     # Load the test data from the classification_model package.
-    # This is important as it makes it harder for the test
-    # data versions to get confused by not spreading it
-    # across packages.
     test_data = load_dataset(file_name=config.TESTING_DATA_FILE)
     post_json = test_data.to_json(orient='records')
 

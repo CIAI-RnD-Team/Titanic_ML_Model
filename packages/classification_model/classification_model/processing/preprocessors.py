@@ -126,40 +126,6 @@ class RareLabelCategoricalEncoder(BaseEstimator, TransformerMixin):
 
         return X
 
-
-# string to numbers categorical encoder
-# class CategoricalEncoder(BaseEstimator, TransformerMixin):
-
-#     def __init__(self, variables=None):
-#         if not isinstance(variables, list):
-#             self.variables = [variables]
-#         else:
-#             self.variables = variables
-
-#     def fit(self, X, y=None):
-
-#         # persist the dummy variables found in train set
-#         self.dummies = pd.get_dummies(X[self.variables], drop_first=True).columns
-#         return self
-
-#     def transform(self, X):
-#         # encode labels
-#         X = X.copy()
-#         X = pd.concat([X,
-#                        pd.get_dummies(X[self.variables], drop_first=True)],
-#                        axis=1)
-
-#         X.drop(labels=self.variables, axis=1, inplace=True)
-
-#         # add missing dummies if any
-#         missing_vars = [var for var in self.dummies if var not in X.columns]
-
-#         if len(missing_vars) != 0:
-#             for var in missing_vars:
-#                 X[var] = 0
-
-#         return X
-
 class CategoricalEncoder(BaseEstimator, TransformerMixin):
     """String to numbers categorical encoder."""
 

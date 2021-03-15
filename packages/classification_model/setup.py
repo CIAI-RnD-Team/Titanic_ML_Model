@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 import io
 import os
 from pathlib import Path
@@ -21,13 +18,6 @@ REQUIRES_PYTHON = '>=3.6.0'
 def list_reqs(fname='requirements.txt'):
     with open(fname) as fd:
         return fd.read().splitlines()
-
-
-# The rest you shouldn't have to touch too much :)
-# ------------------------------------------------
-# Except, perhaps the License and Trove Classifiers!
-# If you do change the License, remember to change the
-# Trove Classifier for that!
 
 here = os.path.abspath(os.path.dirname(__file__))
 

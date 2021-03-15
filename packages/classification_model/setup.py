@@ -19,7 +19,6 @@ def list_reqs(fname='requirements.txt'):
     with open(fname) as fd:
         return fd.read().splitlines()
 
-
 here = os.path.abspath(os.path.dirname(__file__))
 
 try:

@@ -30,7 +30,6 @@ def test_version_endpoint_returns_version(flask_test_client):
 def test_prediction_endpoint_returns_prediction(flask_test_client):
     # Given
     # Load the test data from the classification_model package
-    
     test_data = load_dataset(file_name=model_config.TESTING_DATA_FILE)
     post_json = test_data[0:1].to_json(orient='records')
 

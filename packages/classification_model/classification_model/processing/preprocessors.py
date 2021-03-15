@@ -125,8 +125,6 @@ class RareLabelCategoricalEncoder(BaseEstimator, TransformerMixin):
                                                       feature]), X[feature], 'Rare')
 
         return X
-
-
 class CategoricalEncoder(BaseEstimator, TransformerMixin):
     """String to numbers categorical encoder."""
 

@@ -112,20 +112,20 @@ Note: while running these tests on local machine, the differential test will fai
 
 
 ## Setting up CircleCI, Gemfury and Heroku accounts
-1. CircleCI - Login to CircleCI using GitHub account> setup project> commit and run.Everytime you create a pull request in your repository, the jobs will get executed.
-2. Gemfury - You can login with your GitHub account or a email account.
-3. Heroku - Login using GitHub account> New app> create a app name and select region
+1. **CircleCI** - Login to CircleCI using GitHub account> setup project> commit and run.Everytime you create a pull request in your repository, the jobs will get executed.
+2. **Gemfury** - You can login with your GitHub account or a email account.
+3. **Heroku** - Login using GitHub account> New app> create a app name and select region
 
 
 ## Setting up environmental variables in CircleCI
 To set up environment vairables for CircleCI, select your project> project settings> environment variables.
 We need to setup a total of 6 environmental variables.
-   1. HEROKU_API_KEY - click on your heroku profile icon, and go to settings. Scroll down, and you will find the API key.
-   2. HEROKU_APP_NAME - Your Heroku app name.
-   3. HEROKU_EMAIL - email used to login to heroku.
-   4. KAGGLE_KEY - go to your kaggle account> click on your profile> settings> scroll down to find API key.
-   5. KAGGLE_USERNAME - your kaggle username.
-   6. PIP_EXTRA_INDEX_URL - go to your gemfury account> tokens> full access token.
+   1. **HEROKU_API_KEY** - click on your heroku profile icon, and go to settings. Scroll down, and you will find the API key.
+   2. **HEROKU_APP_NAME** - Your Heroku app name.
+   3. **HEROKU_EMAIL** - email used to login to heroku.
+   4. **KAGGLE_KEY** - go to your kaggle account> click on your profile> settings> scroll down to find API key.
+   5. **KAGGLE_USERNAME** - your kaggle username.
+   6. **PIP_EXTRA_INDEX_URL** - go to your gemfury account> tokens> full access token.
 
 Now everytime you create a pull request, the workflow in CircleCI will get executed and the model will be deployed on Heroku.
 

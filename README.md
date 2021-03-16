@@ -53,6 +53,7 @@ The aim is to build a CI/CD pipeline for our Application pipeline and ML API, an
    - Makefile - contains commands required to build and push our application on heroku.
    - Procfile - building a web gateway server on heroku. 
 
+
 ## Training the model
 It's quiet simple to train our model, just run the command-
 ``` 
@@ -60,6 +61,7 @@ python packages/classification_model/classification_model/train_pipeline.py
 ```
 Make sure that there datasets present in the datasets directory.
 This command will generate a pickle file which can be used to predict.
+
 
 ## Predicting data
 Now that you have trained and generated a pickle file, it time to predict.
@@ -73,3 +75,39 @@ predictions = make_prediction(input_data=test_data)
 print(predictions)
 ```
 predictions vairable will contain a dictonary with the predictions array and model version.
+
+
+## Running test on ML model.
+We have got our ML model, we are gonna run test on training and predict.
+You need to install pytest python module.
+```
+pip install pytest
+```
+To run the tests, run this command in command line- 
+```
+pytest packages/classification_model/tests
+```
+If all the tests have passed, you will see something like this 
+![test_predict](https://user-images.githubusercontent.com/70632625/111276500-6638a180-865d-11eb-9330-52033daa6622.PNG)
+
+
+## Building the API
+To run our api,
+```
+python packages/ml_api/run.py
+```
+This will generate a ip-address, copy the ip-address and paste it in you web browser-
+```
+generated_ip_address/health
+```
+this should show you the message "health status ok". 
+
+
+## Testing API
+To run tests on your api,
+```
+pytest packages/ml_api/tests
+```
+Note: while running these tests on local machine, the differential test will fail. This is due to differential test is made to run on CircleCI, not locally.
+
+

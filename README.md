@@ -43,15 +43,15 @@ The aim is to build a CI/CD pipeline for our Application pipeline and ML API, an
        - run.py - building our api.
        - run.sh - a single file to run a few lines of shell commands to deploy a web server gateway for our api.
        - VERSION - api version.
-   - scripts
-     - fetch_kaggle_dataset.sh - shell file to extract and save our titanic dataset.
-     - input_test.json - input prediction data.
-     - publish_model.sh - publish our model to Gemfury, a private repository.
-   - .dockerignore - tells docker which files to ignore during while generating a build context.
-   - .gitignore - tell git which files to ignore.
-   - Dockerfile - contains all the commands required to generate a docker image.
-   - Makefile - contains commands required to build and push our application on heroku.
-   - Procfile - building a web gateway server on heroku. 
+3.scripts
+  - fetch_kaggle_dataset.sh - shell file to extract and save our titanic dataset.
+  - input_test.json - input prediction data.
+  - publish_model.sh - publish our model to Gemfury, a private repository.
+4. .dockerignore - tells docker which files to ignore during while generating a build context.
+5. .gitignore - tell git which files to ignore.
+6. Dockerfile - contains all the commands required to generate a docker image.
+7. Makefile - contains commands required to build and push our application on heroku.
+8. Procfile - building a web gateway server on heroku. 
 
 
 ## Training the model
@@ -77,7 +77,7 @@ print(predictions)
 predictions vairable will contain a dictonary with the predictions array and model version.
 
 
-## Running test on ML model.
+## Running test on ML model
 We have got our ML model, we are gonna run test on training and predict.
 You need to install pytest python module.
 ```
@@ -111,3 +111,27 @@ pytest packages/ml_api/tests
 Note: while running these tests on local machine, the differential test will fail. This is due to differential test is made to run on CircleCI, not locally.
 
 
+## Setting up CircleCI, Gemfury and Heroku accounts
+1. CircleCI - Login to CircleCI using GitHub account> setup project> commit and run.Everytime you create a pull request in your repository, the jobs will get executed.
+2. Gemfury - You can login with your GitHub account or a email account.
+3. Heroku - Login using GitHub account> New app> create a app name and select region
+
+
+## Setting up environmental variables in CircleCI
+To set up environment vairables for CircleCI, select your project> project settings> environment variables.
+We need to setup a total of 6 environmental variables.
+   1. HEROKU_API_KEY - click on your heroku profile icon, and go to settings. Scroll down, and you will find the API key.
+   2. HEROKU_APP_NAME - Your Heroku app name.
+   3. HEROKU_EMAIL - email used to login to heroku.
+   4. KAGGLE_KEY - go to your kaggle account> click on your profile> settings> scroll down to find API key.
+   5. KAGGLE_USERNAME - your kaggle username.
+   6. PIP_EXTRA_INDEX_URL - go to your gemfury account> tokens> full access token.
+
+Now everytime you create a pull request, the workflow in CircleCI will get executed and the model will be deployed on Heroku.
+
+You can check if your app has been deployed or not by checking https://YOUR-HEROKU-APP-NAME.herokuapp.com/version or https://YOUR-HEROKU-APP-NAME.herokuapp.com/health/
+
+To get a prediction, open your command line and go to scripts directory and use this command -
+```
+curl --header "Content-Type: application/json" --request POST --data @input_test.json https://YOUR-HEROKU-APP-NAME.herokuapp.com/v1/predict/classification
+```

@@ -43,7 +43,7 @@ The aim is to build a CI/CD pipeline for our Application pipeline and ML API, an
        - run.py - building our api.
        - run.sh - a single file to run a few lines of shell commands to deploy a web server gateway for our api.
        - VERSION - api version.
-3.scripts
+3. scripts
   - fetch_kaggle_dataset.sh - shell file to extract and save our titanic dataset.
   - input_test.json - input prediction data.
   - publish_model.sh - publish our model to Gemfury, a private repository.

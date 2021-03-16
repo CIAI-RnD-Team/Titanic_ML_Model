@@ -8,7 +8,7 @@ import json
 class InvalidInputError(Exception):
     """Invalid model input."""
 
-class HouseDataRequestSchema(Schema):
+class SurvivorDataRequestSchema(Schema):
     PassengerId = fields.Integer()
     PClass = fields.Integer()
     Name = fields.Str()
@@ -39,7 +39,7 @@ def validate_inputs(input_data):
     """Check prediction inputs against schema."""
 
     # set many=True to allow passing in a list
-    schema = HouseDataRequestSchema(strict=True, many=True)
+    schema = SurvivorDataRequestSchema(strict=True, many=True)
 
     errors = None
     try:

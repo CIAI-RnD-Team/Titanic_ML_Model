@@ -44,9 +44,9 @@ The aim is to build a CI/CD pipeline for our Application pipeline and ML API, an
        - run.sh - a single file to run a few lines of shell commands to deploy a web server gateway for our api.
        - VERSION - api version.
 3. scripts
-  - fetch_kaggle_dataset.sh - shell file to extract and save our titanic dataset.
-  - input_test.json - input prediction data.
-  - publish_model.sh - publish our model to Gemfury, a private repository.
+   - fetch_kaggle_dataset.sh - shell file to extract and save our titanic dataset.
+   - input_test.json - input prediction data.
+   - publish_model.sh - publish our model to Gemfury, a private repository.
 4. .dockerignore - tells docker which files to ignore during while generating a build context.
 5. .gitignore - tell git which files to ignore.
 6. Dockerfile - contains all the commands required to generate a docker image.

@@ -3,7 +3,7 @@ This repository contains all the necessary files to train, test and deploy the M
 The aim is to build a CI/CD pipeline for our Application pipeline and ML API, and automate the process of training and deploying.
 
 1. **.circleci**
-   - config.yml -  contains all the jobs and the workflow of the jobs that has to be executed by the CircleCI.
+   - **config.yml** -  contains all the jobs and the workflow of the jobs that has to be executed by the CircleCI.
 2. **packages**
    - **classification_model**
       - **classification_model**

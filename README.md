@@ -53,5 +53,23 @@ The aim is to build a CI/CD pipeline for our Application pipeline and ML API, an
    - Makefile - contains commands required to build and push our application on heroku.
    - Procfile - building a web gateway server on heroku. 
 
+## Training the model
+It's quiet simple to train our model, just run the command-
+``` 
+python packages/classification_model/classification_model/train_pipeline.py
+```
+Make sure that there datasets present in the datasets directory.
+This command will generate a pickle file which can be used to predict.
 
-       -  
+## Predicting data
+Now that you have trained and generated a pickle file, it time to predict.
+In a python file,
+```
+from classification_model.predict import make_prediction
+from classification_model.processing.data_management import load_dataset
+
+test_data = load_dataset(file_name='test.csv') # here you can give your own csv input file for predictions.
+predictions = make_prediction(input_data=test_data)
+print(predictions)
+```
+predictions vairable will contain a dictonary with the predictions array and model version.

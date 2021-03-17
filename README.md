@@ -10,11 +10,14 @@ The aim is to build a CI/CD pipeline for our Application pipeline and ML API, an
         - **config**
            - **config.py** - contains all the paths and parameters used for training the model.
            - **logging_config.py** - to log all the steps and messages while working witht model.
-        - **data_management.py** - loading your dataset, saving your pipeline file, loading your saved pipeline file and removing the older versions of pipeline file.
-        - **errors.py** - checking for errors during validation.
-        - **features.py** - to apply feature engineering steps on the features.
-        - **preprocessors.py** - the preprocessing steps used in training of the pipeline. They follow the scikit learn pipeline template, fit and transform.
-        - **validation.py** - checking inputs if they contain any unprocessable data.
+        - **datasets** - datasets fetched from kaggle will be stored here
+        - **processing** 
+           - **data_management.py** - loading your dataset, saving your pipeline file, loading your saved pipeline file and removing the older versions of pipeline file.
+           - **errors.py** - checking for errors during validation.
+           - **features.py** - to apply feature engineering steps on the features.
+           - **preprocessors.py** - the preprocessing steps used in training of the pipeline. They follow the scikit learn pipeline template, fit and transform.
+           - **validation.py** - checking inputs if they contain any unprocessable data.
+        - **trained_models** - generated pickle file will be store here.
         - **init.py** - configuring logger to use in package and versioning the model.
         - **pipeline.py** - using the scikit-learn pipeline, the model is trained on different transformation steps and one classification algorithm.
         - **train_pipeline.py** - the file where the magic happens. Leveraging the config, preprocessors and the pipeline we generate a pickle file that can be used later to predict data.
@@ -34,7 +37,8 @@ The aim is to build a CI/CD pipeline for our Application pipeline and ML API, an
        - **controller.py** - creating endpoints for our api.
        - **validation.py** - using the input schema, checking for invalid prediction input values.
      - **tests**
-       - **test_differential.py** - this test compares the results of previous tests with present models results.
+       - **differential_tests** 
+          - **test_differential.py** - this test compares the results of previous tests with present models results.
        - **capture_model_predictions.py** - capturing test data predictions, to be used with differential test.
        - **conftest.py** - is used to load in external plugins and modules, pytest will load in these modules and make them available for its tests.
        - **test_controller.py** - checking our api endpoints for bugs and issues.

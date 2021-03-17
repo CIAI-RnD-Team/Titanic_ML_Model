@@ -7,8 +7,9 @@ The aim is to build a CI/CD pipeline for our Application pipeline and ML API, an
 2. **packages**
    - **classification_model**
       - **classification_model**
-        - **config.py** - contains all the paths and parameters used for training the model.
-        - **logging_config.py** - to log all the steps and messages while working witht model.
+        - **config**
+           - **config.py** - contains all the paths and parameters used for training the model.
+           - **logging_config.py** - to log all the steps and messages while working witht model.
         - **data_management.py** - loading your dataset, saving your pipeline file, loading your saved pipeline file and removing the older versions of pipeline file.
         - **errors.py** - checking for errors during validation.
         - **features.py** - to apply feature engineering steps on the features.
